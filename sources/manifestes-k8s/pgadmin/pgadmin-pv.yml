@@ -1,0 +1,15 @@
+kind: PersistentVolume
+metadata:
+  name: pgadmin-pv
+  namespace: ic-webapp
+  labels:
+    env: prod
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/data-k8s/pgadmin4"
